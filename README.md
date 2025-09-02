@@ -118,3 +118,4 @@ seo-bot/
 
 1. **"No pages found"**: Check if URL is accessible and has sitemap.xml
 2. **AI not working**: Install L
+3. If google sign in doesent work its normal just register (will be fixed in V2.0) and official release
