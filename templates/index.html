@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Bot - AI-Powered SEO Optimization</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); z-index: 1000; padding: 15px 0; transition: all 0.3s ease; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: #fff; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { color: white; text-decoration: none; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #ffd700; }
+        .auth-buttons { display: flex; gap: 15px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
+        .btn-primary { background: linear-gradient(45deg, #ff6b6b, #ffd93d); color: white; }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; animation: fadeInUp 1s ease; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; animation: fadeInUp 1s ease 0.2s both; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; animation: fadeInUp 1s ease 0.4s both; }
+        .btn-large { padding: 15px 30px; font-size: 1.1rem; }
+        .features { padding: 100px 0; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .feature-card { background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .pricing { padding: 100px 0; }
+        .pricing h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 800px; margin: 0 auto; }
+        .pricing-card { background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; text-align: center; position: relative; transition: transform 0.3s ease; }
+        .pricing-card:hover { transform: scale(1.05); }
+        .pricing-card.featured { background: linear-gradient(45deg, #ff6b6b, #ffd93d); transform: scale(1.1); }
+        .pricing-card h3 { font-size: 2rem; margin-bottom: 10px; }
+        .price { font-size: 3rem; font-weight: bold; margin-bottom: 20px; }
+        .price span { font-size: 1rem; opacity: 0.7; }
+        .features-list { list-style: none; margin-bottom: 30px; }
+        .features-list li { margin-bottom: 10px; padding: 5px 0; }
+        .features-list li:before { content: "✓"; color: #4CAF50; font-weight: bold; margin-right: 10px; }
+        footer { background: rgba(0, 0, 0, 0.3); padding: 50px 0; text-align: center; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">🤖 SEO Bot</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <!-- Site login/signup buttons -->
+                <a href="{{ url_for('login') }}" class="btn btn-secondary">Sign In</a>
+                <a href="{{ url_for('register') }}" class="btn btn-primary">Sign Up - It's Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>1 URL input, 10 SEO insights.<br>Optimize 10x faster.</h1>
+                <p>SEO Bot analyzes your website and provides actionable insights to boost your search rankings across all major search engines in one click.</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('login') }}" class="btn btn-primary btn-large">Get Free Analysis</a>
+                    <a href="{{ url_for('register') }}" class="btn btn-secondary btn-large">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Powerful SEO Features for Every Business</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Keyword Analysis</h3>
+                    <p>Discover high-impact keywords and optimize your content for maximum search visibility.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Competitor Research</h3>
+                    <p>Analyze your competitors' strategies and find opportunities to outrank them.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Site Speed Optimization</h3>
+                    <p>Identify and fix performance issues that impact your search rankings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile SEO</h3>
+                    <p>Ensure your site performs perfectly on mobile devices for better rankings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Link Building</h3>
+                    <p>Discover high-quality backlink opportunities to boost your domain authority.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Rank Tracking</h3>
+                    <p>Monitor your keyword rankings and track your SEO progress over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>5 URL analyses per month</li>
+                        <li>Basic SEO audit</li>
+                        <li>Keyword suggestions</li>
+                        <li>Mobile-friendly test</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="{{ url_for('register') }}" class="btn btn-secondary">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>Unlimited URL analyses</li>
+                        <li>Advanced SEO audit</li>
+                        <li>Competitor analysis</li>
+                        <li>Rank tracking</li>
+                        <li>Backlink analysis</li>
+                        <li>White-label reports</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SEO Bot. All rights reserved. Boost your rankings with AI-powered SEO insights.</p>
+        </div>
+    </footer>
+</body>
+</html>

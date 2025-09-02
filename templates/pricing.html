@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - SEO Bot</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: 40px auto; padding: 40px 20px; background: rgba(0,0,0,0.2); border-radius: 20px; box-shadow: 0 4px 32px rgba(0,0,0,0.15); }
+        h1 { text-align: center; font-size: 2.5rem; margin-bottom: 32px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 32px; }
+        .pricing-card { background: rgba(255,255,255,0.08); border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .pricing-card.featured { background: linear-gradient(45deg, #ff6b6b, #ffd93d); color: #333; transform: scale(1.06); }
+        .pricing-card h2 { font-size: 2rem; margin-bottom: 12px; }
+        .price { font-size: 2.5rem; font-weight: bold; margin-bottom: 20px; }
+        .price span { font-size: 1rem; opacity: 0.75; }
+        .features-list { list-style: none; text-align: left; margin: 0 auto 24px auto; max-width: 250px; padding: 0; }
+        .features-list li { margin-bottom: 10px; padding-left: 1.5em; position: relative; }
+        .features-list li:before { content: "✓"; color: #4CAF50; font-weight: bold; position: absolute; left: 0; }
+        .btn { padding: 12px 28px; border: none; border-radius: 25px; cursor: pointer; font-weight: 500; font-size: 1rem; transition: all 0.2s; text-decoration: none; margin-top: 10px; display: inline-block; }
+        .btn-primary { background: linear-gradient(45deg, #ff6b6b, #ffd93d); color: white; }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+        .back-link { display: block; text-align: center; margin-top: 24px; color: #fff; text-decoration: underline; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Plan</h1>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h2>Free</h2>
+                <div class="price">$0<span>/month</span></div>
+                <ul class="features-list">
+                    <li>5 URL analyses per month</li>
+                    <li>Basic SEO audit</li>
+                    <li>Keyword suggestions</li>
+                    <li>Mobile-friendly test</li>
+                    <li>Email support</li>
+                </ul>
+                <!-- FIXED BUTTON LINK ONLY -->
+                <a href="{{ url_for('google.login', next=url_for('dashboard')) }}" class="btn btn-secondary">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <h2>Pro</h2>
+                <div class="price">$29<span>/month</span></div>
+                <ul class="features-list">
+                    <li>Unlimited URL analyses</li>
+                    <li>Advanced SEO audit</li>
+                    <li>Competitor analysis</li>
+                    <li>Rank tracking</li>
+                    <li>Backlink analysis</li>
+                    <li>White-label reports</li>
+                    <li>Priority support</li>
+                </ul>
+                <!-- FIXED BUTTON LINK ONLY -->
+                <a href="{{ url_for('google.login', next=url_for('dashboard')) }}" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </div>
+        <a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
